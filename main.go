@@ -2,15 +2,15 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 
-	"github.com/alephmelo/go-web/models"
+	"github.com/alephmelo/go-web/controllers"
 )
 
 func main() {
-	u := models.User{
-		ID:        2,
-		FirstName: "Aleph",
-		LastName:  "Melo",
-	}
-	fmt.Println(u)
+	port := ":3000"
+	controllers.RegisterControllers()
+
+	fmt.Println("Listening on port", port)
+	http.ListenAndServe(port, nil)
 }
