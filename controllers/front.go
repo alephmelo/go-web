@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+// RegisterControllers is our front-facing controller.
 func RegisterControllers() {
 	uc := newUserController()
 
